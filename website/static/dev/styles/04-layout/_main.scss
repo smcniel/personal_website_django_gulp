@@ -1,0 +1,212 @@
+.site-content {
+   // set flex-shrink to 0 for all browsers
+   // fit entire parent flex, don't shrink, space oneself automatically
+   flex: 1 0 auto;
+   width: 100%;
+   // padding: $space $space 0;
+}
+
+.site-content::after {
+   content: '\00a0'; // non breakable space
+   display: block;
+   margin-top: $space;
+   height: 0px;
+   visibility: hidden;
+}
+
+.container {
+   max-width: 60em; // or 50em for 800px max
+   margin: 0 auto;
+   height: 100%;
+}
+
+.section1 {
+   background-color: $section-kellygr;
+   height: 70vh;
+}
+
+// .section1A {
+//    z-index: 100;
+// }
+
+.section2 {
+   background-color: $section-gray;
+   height: 70vh;
+}
+
+.section3 {
+   background-color: $section-gray;
+   height: 70vh;
+}
+
+.section4 {
+   background-color: $section-gray;
+   height: 70vh;
+}
+
+// ============================================================================
+// FLEX BOXES
+// ============================================================================
+
+.grid {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   // height: 100%;
+}
+
+.media-grid {
+   height: 100%;
+   width: 100%;
+   max-height: 100%;
+   max-width: 100%;
+   min-height: 0;
+   justify-content: center;
+}
+
+.text-grid {
+   @extend .media-grid;
+   align-items: flex-end;
+}
+
+.name-grid {
+   @extend .media-grid;
+   align-items: flex-end;
+}
+
+// .col-grid {
+//    display: flex;
+//    flex-wrap: wrap;
+//    list-style: none;
+//    margin: 0;
+//    padding: 0;
+//    flex-direction: column;
+//    height: 100%;
+//    // width: 100%; // maybe
+//    // height: 100%;
+// }
+
+.grid-cell{
+   flex: 1;
+}
+
+.media-cell {
+   max-height: 100%;
+   max-width: 100%;
+   min-height: 0;
+   flex: 1 50%;
+}
+
+.text-cell {
+   align-items: center;
+}
+
+.name-cell {
+   flex: 2;
+}
+
+// .grid-cell-col{
+//    flex: 1 0 auto;
+//    width: 100%;
+// }
+
+// .grid-cell2 {
+//    flex: 2;
+// }
+
+.grid-gutters {
+   margin: -1em 0 1em -1em;
+   > .grid-cell{
+      padding: 1em 0 0 1em;
+   }
+}
+
+// ============================================================================
+// BLOCK DIVS AND SPECIFIC STYLES
+// ============================================================================
+.cell-wrapper {
+   width: 100%;
+   padding: .8em 1em 0;
+   text-align: center;
+   // background-color: gray;
+}
+
+.cell-wrapper::after {
+   content: '\00a0';
+   display: block;
+   margin-top: 1em;
+   height: 0px;
+   visibility: hidden;
+}
+
+.cell-wrapperbasic {
+   width: 100%;
+   // padding: .8em 1em 0;
+   text-align: center;
+   // background-color: gray;
+}
+
+.cell-wrapperbasic::after {
+   content: '\00a0';
+   display: block;
+   // margin-top: 1em;
+   height: 0px;
+   visibility: hidden;
+}
+
+.text {
+   padding: .8em 3em 2em;
+   text-align: left;
+}
+// .photobox {
+//    height: 150px;
+//    width: 150px;
+//    color: blue;
+// }
+
+.media {
+   // background-color: $photo-box;
+   height: 100%;
+   width: 100%;
+   max-height: 100%;
+   max-width: 100%;
+   // background-color: gray;
+}
+
+.tech-intro {
+   background-image: url("../images/battleglitch3.jpg");
+   background-color: white;
+   // padding-bottom: 100%;
+   // width: 100%;
+}
+
+.photo-intro {
+   background-image: url("../images/photo2.jpg");
+   background-color: gray;
+   // padding-bottom: 100%;
+   // width: 100%;
+}
+// .cardbox {
+//    min-height: 240px;
+//    min-width: 140px;
+//    // height: 200px;
+//    // width: 140px;
+//    height: 100%;
+//    width: 100%;
+// }
+
+// .cards {
+//    // height: 300px;
+//    // width: 100px;
+//    // text-align: center;
+//    // margin: 0 auto;
+//    // background: gray;
+//    height: 100%;
+//    border: 3px solid black;
+//    margin-top: 10px;
+
+
+

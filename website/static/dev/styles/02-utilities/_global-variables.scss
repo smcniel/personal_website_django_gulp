@@ -1,0 +1,64 @@
+// =============================================================================
+// Z Indexing
+// =============================================================================
+// $zOverlay: 1000;
+// $zCanvas:  5000;
+
+// =============================================================================
+// Font Sizes and Leading
+// =============================================================================
+$font-size-base: 16px;
+$font-header1: 900 2em 'Roboto', sans-serif;
+$font-title: 900 3em 'Roboto', sans-serif;
+$font-name-title: 900 6em 'Roboto', sans-serif;
+// $font-header2: 700 2.25em 'Lato', sans-serif;
+$font-header2: 700 1.25em 'Roboto', sans-serif; // for LI?
+// $font-header3: 500 1em 'Roboto', sans-serif; // for LI?
+$font-header3: 400 1em 'Roboto', sans-serif;
+$font-body: 400 .8em 'Lato', sans-serif;
+$font-button: 400 .8em 'Lato', sans-serif;
+$nav-text: 500 .8em 'Roboto', sans-serif; // for LI?
+
+// =============================================================================
+// Responsive Breakpoints
+// =============================================================================
+// min width
+// $width-ipad: 768px;
+$width-large: 1024px;
+$width-mobile: 768px;
+
+// =============================================================================
+// Colors
+// =============================================================================
+
+$header-text: black;
+$body-text: #fff;
+$section1: #d4afa6;
+$section-gray: #ebebeb; // lt gray
+$paragraph-font: slate; // dk gray
+$section-blue: #d1dbe5;
+$section-kellygr: #2ec181;
+$dkblue-gray: #323540;
+// #d4d5d0; // dk gray
+// $player1-header: #dc4b69;
+// $player2-header: #b9e2de; // darker #a7dbd6
+// $player3-header: #29b89b;
+// $player4-header: #033251;
+// $player5-header: #d4d5d0; // gray darker #bcbdb9
+// $whitecard-body: #fff;
+// $blackcard-body: black;
+// light blue c3d6dd
+// light blue d1dbe5 this
+// $li-hover: rgba(254, 73, 26, 1); // vermillion
+
+$button: #7aced1; // light blue green
+$link-hover: #e34241;
+
+// =============================================================================
+// Commonly used margins and padding
+// =============================================================================
+
+$space: 1.5em;
+// $header-padding: 3em 1.5em;
+// $header-padding: 1em;
+

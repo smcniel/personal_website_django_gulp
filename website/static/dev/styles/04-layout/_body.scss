@@ -1,0 +1,22 @@
+body {
+  height: auto;
+  min-height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+.site {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   font-size: $font-size-base;
+}
+
+.site-header,
+.site-footer {
+   flex-shrink: 0;
+   flex: none;
+}
+

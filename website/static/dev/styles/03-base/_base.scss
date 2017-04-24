@@ -1,0 +1,72 @@
+*,
+*::after,
+*::before {
+  // this pushes the padding and border inside the box
+  // so width 100 px is actually 100px
+  box-sizing: border-box;
+}
+
+h1 {
+   font: $font-header1;
+   color: $header-text;
+}
+
+// .portfolio-title {
+//   font: $font-title;
+// }
+
+// .name-title {
+//   font: $font-name-title;
+// }
+
+h2 {
+   font: $font-header2;
+   color: $header-text;
+   // margin: 0 0 1.12528em;
+}
+
+h3 {
+   font: $font-header3;
+   color: $header-text;
+}
+
+p {
+   font: $font-body;
+   margin: 0 0 1.5em;
+   text-decoration: none;
+   color: $paragraph-font;
+}
+
+.paragraph {
+  align-text: justify;
+}
+
+
+// a {
+//   text-decoration: none;
+// }
+
+// .switch-link {
+//    color: white;
+//    margin-top: 10px;
+//    &:hover {
+//     color: $link-hover;
+//    }
+// }
+
+// li {
+//    font: $card-text;
+//    // margin: 0 0 2em;
+//    color: $header-text; // change this to reflect dif cards
+//    // &:hover{
+//    //    color: $li-hover;
+//    // }
+// }
+
+// input, select, textarea {
+//   font: $font-body;
+// }
+
+// button {
+//   font: $font-button;
+// }
