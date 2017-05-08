@@ -4,14 +4,77 @@
   Homepage - {{ block.super }}
 {% endblock title %}
 
+{% block header %}
+<nav id="nav-layout" role="navigation">
+  <ul class="nav-menu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Portfolio</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+{% endblock header %}
+
 {% block content %}
 <div class="container section1">
-  <div class="grid name-grid">
-    <div class="grid-cell name-cell">
+  <div class="grid">
+    <div class="grid-cell">
       <h1>Hello!</h1>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="grid-cell">
+      {% for project in projects %}
+      <h2>
+        <a href="{% url 'project_detail' slug=project.slug %}">{{ project.title }}
+        </a>
+      </h2>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="container section2">
+  <div class="grid">
+    <div class="grid-cell">
+      <h1>Design inspired, Full Stack Programmer.</h1>
+    </div>
+  </div>
+</div>
+<div class="container section3">
+  <div class="media-grid">
+    <div id="savage" class="media-cell">
+      <div class="media-overlay">
+        <h3>Savage Diction</h3>
+      </div>
+      <img src="http://placehold.it/600x600" class="responsive-img">
+    </div>
+    <div id="haunting" class="media-cell">
+      <img src="http://placehold.it/600x600" class="responsive-img">
+    </div>
+    <div id="subtle" class="media-cell">
+      <img src="http://placehold.it/600x600" class="responsive-img">
+    </div>
+    <div id="estate" class="media-cell">
+      <img src="http://placehold.it/600x600" class="responsive-img">
+    </div>
+    <div id="battle" class="media-cell">
+      <img src="http://placehold.it/600x600" class="responsive-img">
+    </div>
+    <div id="planet" class="media-cell">
+      <img src="http://placehold.it/600x600" class="responsive-img">
+    </div>
+    <div id="video-anim" class="media-cell">
+      <img src="http://placehold.it/600x600" class="responsive-img">
+    </div>
+    <div id="photo" class="media-cell">
+      <img src="http://placehold.it/600x600" class="responsive-img">
+    </div>
+    <div id="placeholder" class="media-cell">
+      <img src="http://placehold.it/600x600" class="responsive-img">
     </div>
   </div>
 </div>
 {% endblock content %}
+
 
 

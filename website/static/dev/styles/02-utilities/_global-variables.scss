@@ -7,25 +7,35 @@
 // =============================================================================
 // Font Sizes and Leading
 // =============================================================================
+// based on http://typecast.com/blog/a-more-modern-scale-for-web-typography
 $font-size-base: 16px;
-$font-header1: 900 2em 'Roboto', sans-serif;
-$font-title: 900 3em 'Roboto', sans-serif;
-$font-name-title: 900 6em 'Roboto', sans-serif;
-// $font-header2: 700 2.25em 'Lato', sans-serif;
-$font-header2: 700 1.25em 'Roboto', sans-serif; // for LI?
-// $font-header3: 500 1em 'Roboto', sans-serif; // for LI?
-$font-header3: 400 1em 'Roboto', sans-serif;
+$font-h1: 900 2em 'Roboto', sans-serif; // 32px
+$font-h1-tablet: 900 2.5em 'Roboto', sans-serif;
+$font-h1-lg: 900 3em 'Roboto', sans-serif;
+// $font-header1-exlg: 900 8em 'Roboto', sans-serif; //
+$font-page-num: 900 9em 'Roboto', sans-serif; // 144
+
+$font-h2: 700 1.625em 'Roboto', sans-serif; // 26px
+$font-h2-tablet: 700 2em 'Roboto', sans-serif;
+$font-h2-lg: 700 2.25em 'Roboto', sans-serif;
+
+$font-h3: 500 1.375em 'Roboto', sans-serif; // 22px
+$font-h3-tablet: 500 1.5em 'Roboto', sans-serif;
+$font-h3-lg: 500 1.75em 'Roboto', sans-serif;
+
 $font-body: 400 .8em 'Lato', sans-serif;
 $font-button: 400 .8em 'Lato', sans-serif;
-$nav-text: 500 .8em 'Roboto', sans-serif; // for LI?
-
+// $font-nav: 500 .8em 'Roboto', sans-serif; //
+$font-nav-mobile: 400 .8em 'Lato', sans-serif;
 // =============================================================================
 // Responsive Breakpoints
 // =============================================================================
-// min width
-// $width-ipad: 768px;
-$width-large: 1024px;
-$width-mobile: 768px;
+
+// $width-med: 600px;
+$width-med: 767px; // for common 768 break
+$width-lg: 1023px; // for common 1024 break
+$width-exlg: 1824px;
+// $width-mobile: 768px;
 
 // =============================================================================
 // Colors
@@ -39,6 +49,14 @@ $paragraph-font: slate; // dk gray
 $section-blue: #d1dbe5;
 $section-kellygr: #2ec181;
 $dkblue-gray: #323540;
+
+// color combo
+$pink: rgba(252, 221, 218, 1);
+$peach: rgb(232, 196, 174);
+$teal: rgb(94, 188, 170);
+$gray-blue: rgb(74, 76, 97);
+$lt-gray: rgb(181, 198, 205);
+
 // #d4d5d0; // dk gray
 // $player1-header: #dc4b69;
 // $player2-header: #b9e2de; // darker #a7dbd6
@@ -60,5 +78,5 @@ $link-hover: #e34241;
 
 $space: 1.5em;
 // $header-padding: 3em 1.5em;
-// $header-padding: 1em;
+$header-padding: 1em 0;
 

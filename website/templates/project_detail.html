@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ project.title }} - {{ block.super }}
+{% endblock title %}
+
+{% block header %}
+<a href="{% url 'home' %}">Home</a>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+  <div class="grid">
+    <div class="grid-cell title-cell">
+      <h1>{{ project.title }}</h1>
+      <p>{{ project.description }}</p>
+    </div>
+  </div>
+</div>
+{% endblock content %}

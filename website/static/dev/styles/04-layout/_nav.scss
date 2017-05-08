@@ -1,12 +1,20 @@
-#access {
-   font-family: $nav-text;
-   overflow: visible;
-   z-index: 100;
+#nav-layout {
+   // overflow: visible;
+   z-index: 1000;
+   transform: none!important;
+   width: 100%;
+   position: fixed;
+   top: 0;
+   transform-origin: top right;
+   padding-right: 10px;
+   padding-left: 10px;
 }
 
 .nav-menu {
-   border: 1px solid #000;
-   border-top: none;
+   display: flex;
+   justify-content: space-between;
+   // border: 1px solid #000;
+   // border-top: none;
 }
 
 .nav-menu, .nav-menu * {
@@ -17,59 +25,68 @@
 
 .nav-menu {
    li {
-      background: #000;
-      background-repeat: repeat-x;
-      border-top: 1px solid #242324;
-      clear: left;
-      float:left;
-      position:relative;
-      width: 100%;
-      &:hover {
-         background: gray;
-         visibility: inherit;
-         ul {
-            top: auto; // match top ul list item height
-            position: relative;
-         }
-      }
+      // background: #000;
+      // background-repeat: repeat-x;
+      // border-top: 1px solid #242324;
+      // clear: left;
+      // float:left;
+      // position:relative;
+      // width: 100%;
+      // &:hover {
+      //    background: gray;
+      //    visibility: inherit;
+      //    ul {
+      //       top: auto; // match top ul list item height
+      //       position: relative;
+      //    }
+      // }
    }
    a {
-      font-size: .8em;
+      // font: $font-nav-mobile;
       color: #fff;
       display: block;
       padding: 12px 0;
-      text-decoration: none;
+      // text-decoration: none;
       // text-indent: 12px;
       text-align: center;
    }
 }
 
-@media only screen and (min-width: $width-mobile) {
-   #access {
-      float: left;
-      height: 36px;
-      width: 100%;
+@media only screen and (min-width: $width-med) {
+   #nav-layout {
+      width: 100vh;
+      transform: rotate(-90deg)!important;
+      right: 35px;
+      // padding-top: 30px;
    }
-
    .nav-menu {
-      height: 36px;
-      z-index: 100;
-      li {
-         clear: none;
-         width: 25%;
-         &:hover {
-            ul {
-               background: #000;
-               left: auto;
-               position: absolute;
-               top: -1;
-               width: 100%;
-               z-index: 100;
-            }
-         }
+      transform: rotate(180deg);
+      justify-content: space-around; // might be better to just do padding
+      a {
+         // padding: 12px 10px;
       }
    }
 }
+
+//    .nav-menu {
+//       height: 36px;
+//       z-index: 100;
+//       li {
+//          clear: none;
+//          width: 25%;
+//          &:hover {
+//             ul {
+//                background: #000;
+//                left: auto;
+//                position: absolute;
+//                top: -1;
+//                width: 100%;
+//                z-index: 100;
+//             }
+//          }
+//       }
+//    }
+// }
 
 //    .nav-menu {
 //       li {

@@ -21,10 +21,10 @@ var gulp                           = require('gulp'),
     // spawn                          = require('child_process').spawn,
 
     // Folder name variables
-    devSourceFolder  = './website/static/dev',
-    devTargetFolder  = './website/static/build',
+    devSourceFolder  = 'website/static/dev',
+    devTargetFolder  = 'website/static/build',
     // prodTargetFolder = 'prod',
-    HTMLSourceFolder = './website/templates',
+    HTMLSourceFolder = 'website/templates',
     JSFolder         = 'scripts',
     imagesFolder     = 'images',
     sassCSSFolder    = 'styles',
@@ -210,33 +210,82 @@ gulp.task('build',
  * looks for them. Also, the browser reloads after a change.
  */
 
-gulp.task('develop', function () {
-    browserSync.init({
-        notify: false,
-        proxy: "http://127.0.0.1:8000/"
+// gulp.task('develop', function () {
+//     browserSync.init({
+//         notify: false,
+//         proxy: "http://127.0.0.1:8000/"
+//     });
+//     gulp.watch(devSourceFolder + '/' + JSFolder + '/*.js',
+//         ['concatenateJSFiles', 'lintJS']).on(
+//         'change',
+//         reload
+//     );
+
+//     gulp.watch(devSourceFolder + '/' + imagesFolder + '/**/*').on(
+//         'change',
+//         reload
+//     );
+
+//     gulp.watch(HTMLSourceFolder + '/**/*.html').on(
+//         'change',
+//         reload
+//     );
+
+//     gulp.watch(devSourceFolder + '/' + sassCSSFolder + '/**/*.scss',
+//         ['compileCSSForDev']).on(
+//         'change',
+//         reload
+//     );
+
+//     console.log(devSourceFolder + '/' + sassCSSFolder);
+// });
+
+// Because the server is already set up to run via django, browserSync acts as a proxy.
+gulp.task('develop',
+    [
+        'compileCSSForDev',
+        'concatenateJSFiles',
+        'lintJS'
+    ],
+    function () {
+        browserSync({
+            notify: true,
+            reloadDelay: 100,
+            // server: {
+                // baseDir: [
+                //     devSourceFolder,
+                //     devTargetFolder,
+                //     devSourceFolder + '/' + HTMLSourceFolder
+                // ]
+                // baseDir: "./"
+            // },
+            proxy: "http://127.0.0.1:8000/"
+        });
+
+        gulp.watch(devSourceFolder + '/' + JSFolder + '/*.js',
+            ['concatenateJSFiles', 'lintJS']).on(
+            'change',
+            reload
+        );
+
+        gulp.watch(devSourceFolder + '/' + imagesFolder + '/**/*').on(
+            'change',
+            reload
+        );
+
+        gulp.watch(HTMLSourceFolder + '/**/*.html').on(
+            'change',
+            reload
+        );
+
+        gulp.watch(devSourceFolder + '/' + sassCSSFolder + '/**/*.scss',
+            ['compileCSSForDev']).on(
+            'change',
+            reload
+        );
+
+        // console.log(devSourceFolder + '/' + sassCSSFolder);
     });
-    gulp.watch(devSourceFolder + '/' + JSFolder + '/*.js',
-        ['concatenateJSFiles', 'lintJS']).on(
-        'change',
-        reload
-    );
-
-    gulp.watch(devSourceFolder + '/' + imagesFolder + '/**/*').on(
-        'change',
-        reload
-    );
-
-    gulp.watch(HTMLSourceFolder + '/**/*.html').on(
-        'change',
-        reload
-    );
-
-    gulp.watch(devSourceFolder + '/' + sassCSSFolder + '/**/*.scss',
-        ['compileCSSForDev']).on(
-        'change',
-        reload
-    );
-});
 /**
  * CLEAN
  *

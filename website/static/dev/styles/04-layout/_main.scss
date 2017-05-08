@@ -3,7 +3,6 @@
    // fit entire parent flex, don't shrink, space oneself automatically
    flex: 1 0 auto;
    width: 100%;
-   // padding: $space $space 0;
 }
 
 .site-content::after {
@@ -15,33 +14,39 @@
 }
 
 .container {
-   max-width: 60em; // or 50em for 800px max
+   max-width: 60em;
    margin: 0 auto;
    height: 100%;
 }
 
 .section1 {
-   background-color: $section-kellygr;
-   height: 70vh;
+   // height: 70vh;
 }
 
-// .section1A {
-//    z-index: 100;
+// .section2 {
 // }
 
-.section2 {
-   background-color: $section-gray;
-   height: 70vh;
+// .section3 {
+//    background-color: $section-gray;
+//    height: 70vh;
+// }
+
+// .section4 {
+//    background-color: $section-gray;
+//    height: 70vh;
+// }
+
+.page-num-div {
+   // required for text-overflow to do anything
+   white-space: nowrap;
+   overflow: hidden;
+}
+.page-num {
+   text-overflow: clip;
 }
 
-.section3 {
-   background-color: $section-gray;
-   height: 70vh;
-}
-
-.section4 {
-   background-color: $section-gray;
-   height: 70vh;
+.paragraph {
+   align-text: justify;
 }
 
 // ============================================================================
@@ -53,29 +58,138 @@
    flex-direction: row;
    flex-wrap: wrap;
    list-style: none;
-   margin: 0;
-   padding: 0;
+   // margin: 0;
+   // padding: 0;
    // height: 100%;
 }
+// .project-title {
+//    z-index: 100;
+// }
 
-.media-grid {
-   height: 100%;
-   width: 100%;
-   max-height: 100%;
+.grid-cell {
+   flex: 1;
+}
+
+.media-cell {
+   margin: 1rem;
+   // &:hover {
+   //  opacity: 0.3;
+   // }
+   position: relative;
+   // padding: 5px;
+   > img {
+      display: block;
+      opacity: 1.0;
+      // &:hover {
+      //    opacity: 0.2;
+      //    filter: alpha(opacity=20); /* For IE8 and earlier */
+      // }
+   }
+}
+
+.media-overlay {
+   position: absolute;
+   background-color: red;
    max-width: 100%;
-   min-height: 0;
-   justify-content: center;
+   max-height: 100%;
+   min-height: 100%;
+   min-width: 100%;
+   z-index: 100;
+   left: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   display: block;
+   &:hover {
+      background-color: white;
+      opacity: 0.2;
+      filter: alpha(opacity=20); /* For IE8 and earlier */
+   }
 }
 
-.text-grid {
-   @extend .media-grid;
-   align-items: flex-end;
+// .grid-gutters {
+//    margin: -1em 0 1em -1em;
+//    > .grid-cell{
+//       padding: 1em 0 0 1em;
+//    }
+// }
+
+// .media-cell.media-overlay:hover {
+//    background-color: white;
+// }
+
+
+@media screen and (min-width: $width-med) {
+   .container {
+      max-width: 40em;
+   }
+
+   .media-grid {
+      extend@ .grid;
+      justify-content: center;
+   }
+
+   .media-cell {
+      width: calc(50% - 2rem);
+   }
 }
 
-.name-grid {
-   @extend .media-grid;
-   align-items: flex-end;
+// Desktops and laptops
+@media screen and (min-width: $width-lg) {
+   .container {
+      max-width: 60em;
+   }
+
+   .media-cell {
+      width: calc(33.3333% - 2rem);  // could also put 33.333%
+   }
 }
+
+// Large screens
+@media screen and (min-width: $width-exlg) {
+
+}
+// .media-grid {
+//    height: 100%;
+//    width: 100%;
+//    max-height: 100%;
+//    max-width: 100%;
+//    min-height: 0;
+//    justify-content: center;
+// }
+
+// .media-grid {
+//    @extend .grid;
+// }
+
+
+
+// .media-grid:before {
+//    content: '';
+//    // display: table;
+//    display: block;
+//    padding-top: 100%;
+// }
+
+// .media-item {
+//    flex-grow: 1;
+//    border: 1px solid black;
+//    background: red;
+//    color: white;
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+// }
+
+// .text-grid {
+//    @extend .media-grid;
+//    align-items: flex-end;
+// }
+
+// .name-grid {
+//    @extend .media-grid;
+//    // align-items: flex-end;
+// }
 
 // .col-grid {
 //    display: flex;
@@ -89,24 +203,18 @@
 //    // height: 100%;
 // }
 
-.grid-cell{
-   flex: 1;
-}
+// .grid-cell{
+//    flex: 1;
+// }
 
-.media-cell {
-   max-height: 100%;
-   max-width: 100%;
-   min-height: 0;
-   flex: 1 50%;
-}
+// .media-cell {
+//    max-height: 100%;
+//    max-width: 100%;
+//    min-height: 0;
+//    flex: 1 50%;
+// }
 
-.text-cell {
-   align-items: center;
-}
 
-.name-cell {
-   flex: 2;
-}
 
 // .grid-cell-col{
 //    flex: 1 0 auto;
@@ -117,12 +225,14 @@
 //    flex: 2;
 // }
 
-.grid-gutters {
-   margin: -1em 0 1em -1em;
-   > .grid-cell{
-      padding: 1em 0 0 1em;
-   }
-}
+
+
+// .media-grid-gutters {
+//    margin: -1em 0 1em -1em;
+//    > .grid-cell{
+//       padding: 1em 0 0 1em;
+//    }
+// }
 
 // ============================================================================
 // BLOCK DIVS AND SPECIFIC STYLES
@@ -161,52 +271,18 @@
    padding: .8em 3em 2em;
    text-align: left;
 }
-// .photobox {
-//    height: 150px;
-//    width: 150px;
-//    color: blue;
-// }
 
-.media {
-   // background-color: $photo-box;
-   height: 100%;
-   width: 100%;
-   max-height: 100%;
+.responsive-img {
    max-width: 100%;
-   // background-color: gray;
 }
 
-.tech-intro {
-   background-image: url("../images/battleglitch3.jpg");
-   background-color: white;
-   // padding-bottom: 100%;
-   // width: 100%;
-}
-
-.photo-intro {
-   background-image: url("../images/photo2.jpg");
-   background-color: gray;
-   // padding-bottom: 100%;
-   // width: 100%;
-}
-// .cardbox {
-//    min-height: 240px;
-//    min-width: 140px;
-//    // height: 200px;
-//    // width: 140px;
-//    height: 100%;
-//    width: 100%;
+// .tech-intro {
+//    background-image: url("../images/battleglitch3.jpg");
+//    background-color: white;
+//    // padding-bottom: 100%;
+//    // width: 100%;
 // }
 
-// .cards {
-//    // height: 300px;
-//    // width: 100px;
-//    // text-align: center;
-//    // margin: 0 auto;
-//    // background: gray;
-//    height: 100%;
-//    border: 3px solid black;
-//    margin-top: 10px;
 
 
 

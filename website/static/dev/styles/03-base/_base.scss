@@ -3,31 +3,26 @@
 *::before {
   // this pushes the padding and border inside the box
   // so width 100 px is actually 100px
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 h1 {
-   font: $font-header1;
+   font: $font-h1;
    color: $header-text;
+   line-height: 1.25em;
 }
 
-// .portfolio-title {
-//   font: $font-title;
-// }
-
-// .name-title {
-//   font: $font-name-title;
-// }
-
 h2 {
-   font: $font-header2;
+   font: $font-h2;
    color: $header-text;
+   line-height: 1.15384615em;
    // margin: 0 0 1.12528em;
 }
 
 h3 {
-   font: $font-header3;
+   font: $font-h3;
    color: $header-text;
+   line-height: 1.13636364em;
 }
 
 p {
@@ -35,38 +30,40 @@ p {
    margin: 0 0 1.5em;
    text-decoration: none;
    color: $paragraph-font;
+   // line-height: 1.25em;
 }
 
-.paragraph {
-  align-text: justify;
+a {
+   text-decoration: none;
+   font: $font-nav-mobile;
 }
 
+@media screen and (min-width: $width-med) {
+   h1 {
+      font: $font-h1-tablet;
+      line-height: 1.125em;
+   }
+   h2 {
+      font: $font-h2-tablet;
+      line-height: 1.25em;
+   }
+   h3 {
+      font: $font-h3-tablet;
+      line-height: 1.25em;
+   }
+}
 
-// a {
-//   text-decoration: none;
-// }
-
-// .switch-link {
-//    color: white;
-//    margin-top: 10px;
-//    &:hover {
-//     color: $link-hover;
-//    }
-// }
-
-// li {
-//    font: $card-text;
-//    // margin: 0 0 2em;
-//    color: $header-text; // change this to reflect dif cards
-//    // &:hover{
-//    //    color: $li-hover;
-//    // }
-// }
-
-// input, select, textarea {
-//   font: $font-body;
-// }
-
-// button {
-//   font: $font-button;
-// }
+@media screen and (min-width: $width-lg) {
+   h1 {
+      font: $font-h1-lg;
+      line-height: 1.05em;
+   }
+   h2 {
+      font: $font-h2-lg;
+      line-height: 1.25em;
+   }
+   h3 {
+      font: $font-h3-lg;
+      line-height: 1.25em;
+   }
+}

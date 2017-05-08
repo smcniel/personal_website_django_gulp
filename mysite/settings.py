@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
@@ -116,17 +117,14 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
-
-# STATIC_URL = 'build/static/'
+# For development only, configure later for production
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, '/website/static/build/'),
-# )
+
 STATICFILES_DIRS = [
     BASE_DIR + '/website/static/build',
 ]
-print(STATICFILES_DIRS)
 # when run collectstatic it all dumps here
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_final')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'build/static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '/website/media')

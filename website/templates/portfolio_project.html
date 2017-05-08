@@ -9,6 +9,14 @@
   <div class="grid">
     <div class="grid-cell title-cell">
       <h1>Project Title</h1>
+      <a href="{ % url 'home' %}">Home</a>
+    </div>
+    <div class="grid-cell">
+      {% if open %}
+      <p>Open!</p>
+      {% else %}
+      <p>Closed</p>
+      {% endif %}
     </div>
   </div>
 </div>
