@@ -19,30 +19,28 @@
    height: 100%;
 }
 
-.section1 {
-   // height: 70vh;
+.section2 {
+   height: 100vh;
 }
 
-// .section2 {
+// .page-num-wrapper {
+//    // required for text-overflow to do anything
+//    white-space: nowrap;
+//    overflow: hidden;
 // }
-
-// .section3 {
-//    background-color: $section-gray;
-//    height: 70vh;
-// }
-
-// .section4 {
-//    background-color: $section-gray;
-//    height: 70vh;
-// }
-
-.page-num-div {
-   // required for text-overflow to do anything
-   white-space: nowrap;
-   overflow: hidden;
-}
 .page-num {
    text-overflow: clip;
+   font: $font-page-num;
+   line-height: 0;
+   // by default h1 has margins
+   // margin: 0;
+   margin-bottom: 0.6em;
+   white-space: nowrap;
+   // margin-left: auto;
+   // padding-left: 0.25em;
+   // margin-right: 0.25em;
+   // padding-right: 0.25em;
+
 }
 
 .paragraph {
@@ -65,9 +63,20 @@
 // .project-title {
 //    z-index: 100;
 // }
-
+.num-grid {
+   @extend .grid;
+   justify-content: flex-end;
+   height: 8rem;
+   overflow: hidden;
+   white-space: nowrap;
+}
 .grid-cell {
    flex: 1;
+}
+
+.num-cell {
+   flex: 0 0 16.6666%;
+   align-self: flex-end;
 }
 
 .media-cell {
@@ -125,7 +134,10 @@
    }
 
    .media-grid {
-      extend@ .grid;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      list-style: none;
       justify-content: center;
    }
 
@@ -158,61 +170,12 @@
 //    justify-content: center;
 // }
 
-// .media-grid {
-//    @extend .grid;
-// }
 
 
 
-// .media-grid:before {
-//    content: '';
-//    // display: table;
-//    display: block;
-//    padding-top: 100%;
-// }
 
-// .media-item {
-//    flex-grow: 1;
-//    border: 1px solid black;
-//    background: red;
-//    color: white;
-//    display: flex;
-//    justify-content: center;
-//    align-items: center;
-// }
 
-// .text-grid {
-//    @extend .media-grid;
-//    align-items: flex-end;
-// }
 
-// .name-grid {
-//    @extend .media-grid;
-//    // align-items: flex-end;
-// }
-
-// .col-grid {
-//    display: flex;
-//    flex-wrap: wrap;
-//    list-style: none;
-//    margin: 0;
-//    padding: 0;
-//    flex-direction: column;
-//    height: 100%;
-//    // width: 100%; // maybe
-//    // height: 100%;
-// }
-
-// .grid-cell{
-//    flex: 1;
-// }
-
-// .media-cell {
-//    max-height: 100%;
-//    max-width: 100%;
-//    min-height: 0;
-//    flex: 1 50%;
-// }
 
 
 
@@ -221,9 +184,6 @@
 //    width: 100%;
 // }
 
-// .grid-cell2 {
-//    flex: 2;
-// }
 
 
 
@@ -266,6 +226,11 @@
    height: 0px;
    visibility: hidden;
 }
+
+// .num-wrapper {
+//    width: 100%;
+
+// }
 
 .text {
    padding: .8em 3em 2em;
