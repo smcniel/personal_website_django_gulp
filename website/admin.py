@@ -8,5 +8,9 @@ class ProjectAdmin(admin.ModelAdmin):
     list_display = ('title', 'description',)
     prepopulated_fields = {'slug': ('title',)}
 
+# class  UploadAdmin(admin.ModelAdmin):
+#     list_display = ('project', )
+#     list_display_links = ('project',)
 # Register your models here.
 admin.site.register(Project, ProjectAdmin)
+# admin.site.register(Upload, UploadAdmin)

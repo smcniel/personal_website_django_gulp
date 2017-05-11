@@ -9,15 +9,42 @@
 // =============================================================================
 // based on http://typecast.com/blog/a-more-modern-scale-for-web-typography
 $font-size-base: 16px;
-$font-h1: 900 2em 'Roboto', sans-serif; // 32px
-$font-h1-tablet: 900 2.5em 'Roboto', sans-serif;
-$font-h1-lg: 900 3em 'Roboto', sans-serif;
+$font-h1: 700 2em 'Cabin', sans-serif; // 32px
+$font-h1-tablet: 700 2.5em 'Cabin', sans-serif;
+$font-h1-lg: 700 3em 'Cabin', sans-serif;
 // $font-header1-exlg: 900 8em 'Roboto', sans-serif; //
-$font-page-num: 900 9em 'Roboto', sans-serif; // 144
+
+// misc larger  h1
+$font-title: 700 2.5em 'Cabin', sans-serif;
+$font-title-tablet: 700 3em 'Cabin', sans-serif;
+$font-title-lg: 700 3.5em 'Cabin', sans-serif;
+$font-title-sm: 700 2em 'Cabin', sans-serif;
+$font-title-sm-tablet: 700 2em 'Cabin', sans-serif;
+$font-title-sm-lg: 700 3em 'Cabin', sans-serif;
+
+$font-title-span: 1.5em 'Libre Baskerville', serif;
+$font-title-span-tablet: 2em 'Libre Baskerville', serif;
+$font-title-span-lg: 2em 'Libre Baskerville', serif;
+// $font-title: 3em 'Archivo Black', sans-serif;
+// $font-title: 3em 'Libre Baskerville', serif;
+// $font-title: 900 4em 'Lato', sans-serif;
+
+
+// $font-title-sm: 3em 'Archivo Black', sans-serif;
+// $font-title-sm: 700 3.25em 'Cabin', sans-serif;
+
+
+
 
 $font-h2: 700 1.625em 'Roboto', sans-serif; // 26px
 $font-h2-tablet: 700 2em 'Roboto', sans-serif;
-$font-h2-lg: 700 2.25em 'Roboto', sans-serif;
+$font-h2-lg: 400 2.25em 'Cabin', sans-serif;
+
+// Misc h2
+$font-title-anim: 1em 'Libre Baskerville', serif;
+$font-title-anim-tablet: 1em 'Libre Baskerville', serif;
+$font-title-anim-lg: 1.25em 'Libre Baskerville', serif; // 24px
+// $font-title-anim: 1.25em 'Archivo Black', sans-serif;
 
 $font-h3: 500 1.375em 'Roboto', sans-serif; // 22px
 $font-h3-tablet: 500 1.5em 'Roboto', sans-serif;

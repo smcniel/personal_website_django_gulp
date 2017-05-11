@@ -16,7 +16,7 @@
 {% endblock header %}
 
 {% block content %}
-<div class="container section1">
+<div class="container">
   <div class="grid">
     <div class="grid-cell">
       <h1>Hello!</h1>
@@ -25,27 +25,36 @@
   <div class="grid">
     <div class="grid-cell">
       {% for project in projects %}
-      <h2>
-        <a href="{% url 'project_detail' slug=project.slug %}">{{ project.title }}
-        </a>
-      </h2>
+      <h2>{{ project.title }}</h2>
       {% endfor %}
     </div>
   </div>
 </div>
-<div class="container section2">
-  <div class="num-grid">
-    <div class="num-cell">
-      <h1 class="page-num">02</h1>
-    </div>
+<div class="container section1">
+  <div>
+  {% for project in projects %}
+    <h2>
+      <a href="{% url 'project_detail' slug=project.slug %}">{{ project.title }}</a>
+    </h2>
+  {% endfor %}
   </div>
-  <div class="grid">
-    <div class="grid-cell">
-      <h1>I MAKE THINGS WITH CODE.</h1>
+</div>
+<div class="container section2">
+  <div class="grid bio-grid">
+    <div class="grid-cell top-align">
+      <h1 class="bio-title title-right">DESIGN-</h1>
+      <h1 class="bio-title">ER</h1>
+    </div>
+    <div class="grid-cell center-align">
+      <h2 class="title-anim">I Make Things With Code.</h2>
+    </div>
+    <div class="grid-cell bottom-align">
+      <h1 class="bio-title-sm title-right"><span>&</span>FULL STACK PROGRAMMER</h1>
     </div>
   </div>
 </div>
 <div class="container section3">
+  <h2>PORTFOLIO</h2>
   <div class="media-grid">
     <div id="savage" class="media-cell">
       <div class="media-overlay">

@@ -19,34 +19,6 @@
    height: 100%;
 }
 
-.section2 {
-   height: 100vh;
-}
-
-// .page-num-wrapper {
-//    // required for text-overflow to do anything
-//    white-space: nowrap;
-//    overflow: hidden;
-// }
-.page-num {
-   text-overflow: clip;
-   font: $font-page-num;
-   line-height: 0;
-   // by default h1 has margins
-   // margin: 0;
-   margin-bottom: 0.6em;
-   white-space: nowrap;
-   // margin-left: auto;
-   // padding-left: 0.25em;
-   // margin-right: 0.25em;
-   // padding-right: 0.25em;
-
-}
-
-.paragraph {
-   align-text: justify;
-}
-
 // ============================================================================
 // FLEX BOXES
 // ============================================================================
@@ -56,28 +28,103 @@
    flex-direction: row;
    flex-wrap: wrap;
    list-style: none;
-   // margin: 0;
-   // padding: 0;
+   margin: 0;
+   padding: 0;
    // height: 100%;
 }
-// .project-title {
-//    z-index: 100;
-// }
-.num-grid {
-   @extend .grid;
-   justify-content: flex-end;
-   height: 8rem;
-   overflow: hidden;
-   white-space: nowrap;
+
+.grid-full {
+   height: 100%;
+   > .grid-cell {
+      flex: 0 0 100%;
+   }
 }
+
+.bio-grid {
+   @extend .grid-full;
+   // justify-content: space-between;
+}
+
+.section1 {
+   height: 100vh;
+}
+
+.section2 {
+   height: 100vh;
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+
+.top-align {
+   align-self: flex-start;
+}
+
+.bottom-align {
+   align-self: flex-end;
+   // text-align: center;
+}
+
+.center-align {
+   align-self: center;
+}
+
+.bio-title {
+   font: $font-title;
+   margin: 0;
+}
+
+.bio-title-sm {
+   font: $font-title-sm;
+   margin: 0;
+   > span {
+      font: $font-title-span;
+      margin-right: 1em;
+   }
+}
+
+.title-anim {
+   text-align: center;
+   font: $font-title-anim;
+}
+
+.title-right {
+   text-align: right;
+}
+
+// .title-justify {
+//    text-align: justify;
+// }
+
+// .title-justify:after {
+//   content: "";
+//   display: inline-block;
+//   width: 100%;
+// }
+.paragraph {
+   align-text: justify;
+}
+
+// .top-right {
+//    text-align: right;
+//    align-self: flex-end;
+// }
+
+
+// .num-grid {
+//    @extend .grid;
+//    justify-content: flex-end;
+//    height: 8rem;
+//    overflow: hidden;
+//    white-space: nowrap;
+// }
 .grid-cell {
    flex: 1;
 }
 
-.num-cell {
-   flex: 0 0 16.6666%;
-   align-self: flex-end;
-}
+// .num-cell {
+//    flex: 0 0 16.6666%;
+//    align-self: flex-end;
+// }
 
 .media-cell {
    margin: 1rem;
@@ -132,6 +179,28 @@
    .container {
       max-width: 40em;
    }
+   .section2 {
+      padding-top: 8em;
+      padding-bottom: 8em;
+   }
+
+   .bio-title {
+      font: $font-title-tablet;
+      margin: 0;
+   }
+
+   .bio-title-sm {
+      font: $font-title-sm-tablet;
+      margin: 0;
+      > span {
+         font: $font-title-span-tablet;
+      }
+   }
+
+   .title-anim {
+      text-align: center;
+      font: $font-title-anim-tablet;
+   }
 
    .media-grid {
       display: flex;
@@ -150,6 +219,29 @@
 @media screen and (min-width: $width-lg) {
    .container {
       max-width: 60em;
+   }
+
+   .section2 {
+      padding-top: 2em;
+      padding-bottom: 2em;
+   }
+
+   .bio-title {
+      font: $font-title-lg;
+      margin: 0;
+   }
+
+   .bio-title-sm {
+      font: $font-title-sm-lg;
+      margin: 0;
+      > span {
+         font: $font-title-span-lg;
+      }
+   }
+
+   .title-anim {
+      text-align: center;
+      font: $font-title-anim-lg;
    }
 
    .media-cell {
@@ -227,16 +319,6 @@
    visibility: hidden;
 }
 
-// .num-wrapper {
-//    width: 100%;
-
-// }
-
-.text {
-   padding: .8em 3em 2em;
-   text-align: left;
-}
-
 .responsive-img {
    max-width: 100%;
 }
@@ -248,6 +330,19 @@
 //    // width: 100%;
 // }
 
-
+// .page-num-wrapper {
+//    // required for text-overflow to do anything
+//    white-space: nowrap;
+//    overflow: hidden;
+// }
+// .page-num {
+//    text-overflow: clip;
+//    font: $font-page-num;
+//    line-height: 0;
+//    // by default h1 has margins
+//    // margin: 0;
+//    margin-bottom: 0.6em;
+//    white-space: nowrap;
+// }
 
 

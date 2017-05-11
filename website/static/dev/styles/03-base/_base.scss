@@ -36,6 +36,7 @@ p {
 a {
    text-decoration: none;
    font: $font-nav-mobile;
+   color: black;
 }
 
 @media screen and (min-width: $width-med) {

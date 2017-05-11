@@ -118,8 +118,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # For development only, configure later for production
+
+# Base URL the browser will look for static files
 STATIC_URL = '/static/'
 
+# Specify location of static directory on local disk
 STATICFILES_DIRS = [
     BASE_DIR + '/website/static/build',
 ]
@@ -127,4 +130,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_final')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '/website/media')
+# Absolute path to the media folder
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'website/media')
