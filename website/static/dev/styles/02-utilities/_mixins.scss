@@ -14,6 +14,25 @@
 }
 
 // RESPONSIVE
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+
+@mixin for-tablet-portrait {
+  @media (min-width: 600px) { @content; }
+}
+
+@mixin for-tablet-landscape {
+  @media (min-width: 900px) { @content; }
+}
+
+@mixin for-desktop {
+  @media (min-width: 1200px) { @content; }
+}
+
+@mixin for-lg-desktop {
+  @media (min-width: 1800px) { @content; }
+}
 // @mixin break-med {
 //   @media (min-width: $width-ipad) {
 //       // .img-sm {display:none;}

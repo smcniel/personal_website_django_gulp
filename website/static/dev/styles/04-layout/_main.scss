@@ -14,9 +14,15 @@
 }
 
 .container {
-   max-width: 60em;
+   max-width: 40em;
    margin: 0 auto;
    height: 100%;
+   @include for-tablet-landscape {
+      max-width: 50em;
+   }
+   @include for-desktop {
+      max-width: 60em;
+   }
 }
 
 // ============================================================================
@@ -33,12 +39,47 @@
    // height: 100%;
 }
 
+.grid-cell {
+   flex: 1;
+}
+
 .grid-full {
    height: 100%;
    > .grid-cell {
       flex: 0 0 100%;
    }
 }
+
+.media-grid {
+   @include for-tablet-portrait {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      list-style: none;
+      justify-content: center;
+   }
+}
+
+.media-cell {
+   margin: 1rem;
+   position: relative;
+   > img {
+      display: block;
+      opacity: 1.0;
+   }
+   @include for-tablet-portrait {
+      width: calc(50% - 2rem);
+   }
+   @include for-tablet-landscape {
+      width: calc(33.3333% - 2rem);
+   }
+}
+// .media-grid-gutters {
+//    margin: -1em 0 1em -1em;
+//    > .grid-cell{
+//       padding: 1em 0 0 1em;
+//    }
+// }
 
 .bio-grid {
    @extend .grid-full;
@@ -51,8 +92,12 @@
 
 .section2 {
    height: 100vh;
-   padding-top: 20px;
-   padding-bottom: 20px;
+   padding-top: 8em;
+   padding-bottom: 8em;
+   @include for-desktop {
+      padding-top: 6em;
+      padding-bottom: 4em;
+   }
 }
 
 .top-align {
@@ -61,7 +106,6 @@
 
 .bottom-align {
    align-self: flex-end;
-   // text-align: center;
 }
 
 .center-align {
@@ -71,6 +115,12 @@
 .bio-title {
    font: $font-title;
    margin: 0;
+   @include for-tablet-landscape {
+      font: $font-title-tablet;
+   }
+   @include for-desktop {
+      font: $font-title-lg;
+   }
 }
 
 .bio-title-sm {
@@ -80,35 +130,39 @@
       font: $font-title-span;
       margin-right: 1em;
    }
+   @include for-tablet-landscape {
+      font: $font-title-sm-tablet;
+      // margin: 0;
+      > span {
+         font: $font-title-span-tablet;
+      }
+   }
+   @include for-desktop {
+      font: $font-title-sm-lg;
+      > span {
+         font: $font-title-span-lg;
+      }
+   }
 }
 
 .title-anim {
    text-align: center;
    font: $font-title-anim;
+   @include for-tablet-landscape {
+      font: $font-title-anim-tablet;
+   }
+   @include for-desktop {
+      font: $font-title-anim-lg;
+   }
 }
 
 .title-right {
    text-align: right;
 }
 
-// .title-justify {
-//    text-align: justify;
-// }
-
-// .title-justify:after {
-//   content: "";
-//   display: inline-block;
-//   width: 100%;
-// }
 .paragraph {
    align-text: justify;
 }
-
-// .top-right {
-//    text-align: right;
-//    align-self: flex-end;
-// }
-
 
 // .num-grid {
 //    @extend .grid;
@@ -117,35 +171,18 @@
 //    overflow: hidden;
 //    white-space: nowrap;
 // }
-.grid-cell {
-   flex: 1;
-}
+
 
 // .num-cell {
 //    flex: 0 0 16.6666%;
 //    align-self: flex-end;
 // }
 
-.media-cell {
-   margin: 1rem;
-   // &:hover {
-   //  opacity: 0.3;
-   // }
-   position: relative;
-   // padding: 5px;
-   > img {
-      display: block;
-      opacity: 1.0;
-      // &:hover {
-      //    opacity: 0.2;
-      //    filter: alpha(opacity=20); /* For IE8 and earlier */
-      // }
-   }
-}
+
 
 .media-overlay {
    position: absolute;
-   background-color: red;
+   // background-color: pink;
    max-width: 100%;
    max-height: 100%;
    min-height: 100%;
@@ -155,136 +192,25 @@
    top: 0;
    right: 0;
    bottom: 0;
-   display: block;
+   // display: block;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   > h3 {
+      opacity: 0;
+   }
    &:hover {
-      background-color: white;
-      opacity: 0.2;
-      filter: alpha(opacity=20); /* For IE8 and earlier */
-   }
-}
-
-// .grid-gutters {
-//    margin: -1em 0 1em -1em;
-//    > .grid-cell{
-//       padding: 1em 0 0 1em;
-//    }
-// }
-
-// .media-cell.media-overlay:hover {
-//    background-color: white;
-// }
-
-
-@media screen and (min-width: $width-med) {
-   .container {
-      max-width: 40em;
-   }
-   .section2 {
-      padding-top: 8em;
-      padding-bottom: 8em;
-   }
-
-   .bio-title {
-      font: $font-title-tablet;
-      margin: 0;
-   }
-
-   .bio-title-sm {
-      font: $font-title-sm-tablet;
-      margin: 0;
-      > span {
-         font: $font-title-span-tablet;
+      + img {  // targets sibling img
+         opacity: 0.2;
+         filter: alpha(opacity=20); /* For IE8 and earlier */
       }
-   }
-
-   .title-anim {
-      text-align: center;
-      font: $font-title-anim-tablet;
-   }
-
-   .media-grid {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      list-style: none;
-      justify-content: center;
-   }
-
-   .media-cell {
-      width: calc(50% - 2rem);
-   }
-}
-
-// Desktops and laptops
-@media screen and (min-width: $width-lg) {
-   .container {
-      max-width: 60em;
-   }
-
-   .section2 {
-      padding-top: 2em;
-      padding-bottom: 2em;
-   }
-
-   .bio-title {
-      font: $font-title-lg;
-      margin: 0;
-   }
-
-   .bio-title-sm {
-      font: $font-title-sm-lg;
-      margin: 0;
-      > span {
-         font: $font-title-span-lg;
+      > h3 {
+         opacity: 1;
       }
-   }
 
-   .title-anim {
-      text-align: center;
-      font: $font-title-anim-lg;
-   }
-
-   .media-cell {
-      width: calc(33.3333% - 2rem);  // could also put 33.333%
    }
 }
 
-// Large screens
-@media screen and (min-width: $width-exlg) {
-
-}
-// .media-grid {
-//    height: 100%;
-//    width: 100%;
-//    max-height: 100%;
-//    max-width: 100%;
-//    min-height: 0;
-//    justify-content: center;
-// }
-
-
-
-
-
-
-
-
-
-
-// .grid-cell-col{
-//    flex: 1 0 auto;
-//    width: 100%;
-// }
-
-
-
-
-// .media-grid-gutters {
-//    margin: -1em 0 1em -1em;
-//    > .grid-cell{
-//       padding: 1em 0 0 1em;
-//    }
-// }
 
 // ============================================================================
 // BLOCK DIVS AND SPECIFIC STYLES

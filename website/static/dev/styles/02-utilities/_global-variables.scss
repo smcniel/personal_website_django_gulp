@@ -15,10 +15,10 @@ $font-h1-lg: 700 3em 'Cabin', sans-serif;
 // $font-header1-exlg: 900 8em 'Roboto', sans-serif; //
 
 // misc larger  h1
-$font-title: 700 2.5em 'Cabin', sans-serif;
+$font-title: 700 2.25em 'Cabin', sans-serif;
 $font-title-tablet: 700 3em 'Cabin', sans-serif;
 $font-title-lg: 700 3.5em 'Cabin', sans-serif;
-$font-title-sm: 700 2em 'Cabin', sans-serif;
+$font-title-sm: 700 1.75em 'Cabin', sans-serif;
 $font-title-sm-tablet: 700 2em 'Cabin', sans-serif;
 $font-title-sm-lg: 700 3em 'Cabin', sans-serif;
 
@@ -36,9 +36,9 @@ $font-title-span-lg: 2em 'Libre Baskerville', serif;
 
 
 
-$font-h2: 700 1.625em 'Roboto', sans-serif; // 26px
-$font-h2-tablet: 700 2em 'Roboto', sans-serif;
-$font-h2-lg: 400 2.25em 'Cabin', sans-serif;
+$font-h2: 600 1.625em 'Cabin', sans-serif; // 26px
+$font-h2-tablet: 600 2em 'Cabin', sans-serif;
+$font-h2-lg: 600 2.25em 'Cabin', sans-serif;
 
 // Misc h2
 $font-title-anim: 1em 'Libre Baskerville', serif;
@@ -46,11 +46,15 @@ $font-title-anim-tablet: 1em 'Libre Baskerville', serif;
 $font-title-anim-lg: 1.25em 'Libre Baskerville', serif; // 24px
 // $font-title-anim: 1.25em 'Archivo Black', sans-serif;
 
-$font-h3: 500 1.375em 'Roboto', sans-serif; // 22px
-$font-h3-tablet: 500 1.5em 'Roboto', sans-serif;
-$font-h3-lg: 500 1.75em 'Roboto', sans-serif;
+$font-h3: 500 1.375em 'Cabin', sans-serif; // 22px
+$font-h3-tablet: 500 1.5em 'Cabin', sans-serif;
+$font-h3-lg: 500 1.75em 'Cabin', sans-serif;
 
-$font-body: 400 .8em 'Lato', sans-serif;
+$font-h4: 400 1.125em 'Cabin', sans-serif; // 18px
+// $font-h4-tablet: 400 1.125em 'Cabin', sans-serif;
+// $font-h4-lg: 400 1.125em 'Cabin', sans-serif;
+
+$font-body: 400 1em 'Lato', sans-serif;
 $font-button: 400 .8em 'Lato', sans-serif;
 // $font-nav: 500 .8em 'Roboto', sans-serif; //
 $font-nav-mobile: 400 .8em 'Lato', sans-serif;

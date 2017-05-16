@@ -8,18 +8,19 @@ class Project(models.Model):
     description = models.TextField()
     slug = models.SlugField(unique=True)
 
-# def get_image_path(instance, filename):
-#     return '/'.join(['project_images', instance.project.slug, filename])
-
-# class Upload(models.Model):
-#     project = models.ForeignKey(Project, related_name="uploads")
-#     image = models.ImageField(upload_to=get_image_path)
+    def __str__(self):
+        return self.title
 
 
+def get_image_path(instance, filename):
+    return '/'.join(['project_images', instance.project.slug, filename])
 
 
-    # def __str__(self):
-    #     return self.title
+class Upload(models.Model):
+    project = models.ForeignKey(Project, related_name="uploads")
+    image = models.ImageField(upload_to=get_image_path)
+
+
 
     # def save(self, *args, **kwargs):
     #     self.slug = slugify(self.title)

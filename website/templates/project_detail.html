@@ -15,6 +15,11 @@
       <h1>{{ project.title }}</h1>
       <p>{{ project.description }}</p>
     </div>
+    <div class="grid-cell">
+    {% for upload in project.uploads.all %}
+      <img src="{{ upload.image.url }}" alt="">
+    {% endfor %}
+    </div>
   </div>
 </div>
 {% endblock content %}

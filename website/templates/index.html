@@ -56,9 +56,12 @@
 <div class="container section3">
   <h2>PORTFOLIO</h2>
   <div class="media-grid">
+  {% for project in projects %}
     <div id="savage" class="media-cell">
       <div class="media-overlay">
-        <h3>Savage Diction</h3>
+        <h3>{% if title == 'savage diction' %}{% endif %}
+          <a href="{% url 'project_detail' slug=project.slug %}">{{ project.title }}</a>
+        </h3>
       </div>
       <img src="http://placehold.it/600x600" class="responsive-img">
     </div>
@@ -86,6 +89,22 @@
     <div id="placeholder" class="media-cell">
       <img src="http://placehold.it/600x600" class="responsive-img">
     </div>
+  {% endfor %}
+  </div>
+</div>
+<div class="container">
+  <h2>PORTFOLIO</h2>
+  <div class="media-grid">
+  {% for project in projects %}
+    <div class="media-cell">
+      <div class="media-overlay">
+        <h3>
+          <a href="{% url 'project_detail' slug=project.slug %}">{{ project.title }}</a>
+        </h3>
+      </div>
+      <img src="http://placehold.it/600x600" class="responsive-img">
+    </div>
+  {% endfor %}
   </div>
 </div>
 {% endblock content %}

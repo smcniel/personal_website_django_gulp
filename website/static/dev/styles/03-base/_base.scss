@@ -10,27 +10,62 @@ h1 {
    font: $font-h1;
    color: $header-text;
    line-height: 1.25em;
+   @include for-tablet-landscape {
+      font: $font-h1-tablet;
+      line-height: 1.125em;
+   }
+   @include for-desktop {
+      font: $font-h1-lg;
+      line-height: 1.05em;
+   }
 }
 
 h2 {
    font: $font-h2;
    color: $header-text;
    line-height: 1.15384615em;
-   // margin: 0 0 1.12528em;
+   @include for-tablet-landscape {
+      font: $font-h2-tablet;
+      line-height: 1.25em;
+   }
+   @include for-desktop {
+      font: $font-h2-lg;
+      line-height: 1.25em; // might not need this b/c inherits
+   }
 }
 
 h3 {
    font: $font-h3;
    color: $header-text;
    line-height: 1.13636364em;
+   @include for-tablet-landscape {
+      font: $font-h3-tablet;
+      line-height: 1.25em;
+   }
+   @include for-desktop {
+      font: $font-h3-lg;
+      line-height: 1.25em;
+   }
+}
+
+h4 {
+   font: $font-h4;
+   color: $header-text;
+   line-height: 1.11111111em;
+   @include for-tablet-landscape {
+      line-height: 1.22222222em;
+   }
 }
 
 p {
    font: $font-body;
-   margin: 0 0 1.5em;
+   // margin: 0 0 1.5em; // does this interfer with line height ratio?
    text-decoration: none;
    color: $paragraph-font;
-   // line-height: 1.25em;
+   line-height: 1.25em;
+   @include for-tablet-landscape {
+      line-height: 1.375em;
+   }
 }
 
 a {
@@ -39,32 +74,3 @@ a {
    color: black;
 }
 
-@media screen and (min-width: $width-med) {
-   h1 {
-      font: $font-h1-tablet;
-      line-height: 1.125em;
-   }
-   h2 {
-      font: $font-h2-tablet;
-      line-height: 1.25em;
-   }
-   h3 {
-      font: $font-h3-tablet;
-      line-height: 1.25em;
-   }
-}
-
-@media screen and (min-width: $width-lg) {
-   h1 {
-      font: $font-h1-lg;
-      line-height: 1.05em;
-   }
-   h2 {
-      font: $font-h2-lg;
-      line-height: 1.25em;
-   }
-   h3 {
-      font: $font-h3-lg;
-      line-height: 1.25em;
-   }
-}
