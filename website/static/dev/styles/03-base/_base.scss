@@ -66,6 +66,9 @@ p {
    @include for-tablet-landscape {
       line-height: 1.375em;
    }
+   @include for-desktop {
+      line-height: 1.5em;
+   }
 }
 
 a {

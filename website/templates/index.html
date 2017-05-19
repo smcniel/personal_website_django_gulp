@@ -102,7 +102,11 @@
           <a href="{% url 'project_detail' slug=project.slug %}">{{ project.title }}</a>
         </h3>
       </div>
-      <img src="http://placehold.it/600x600" class="responsive-img">
+      {% for photo in project.photos.all %}
+        {% if photo.is_cover_photo %}
+        <img src="{{ photo.image.url }}" class="responsive-img" alt="">
+        {% endif %}
+      {% endfor %}
     </div>
   {% endfor %}
   </div>
