@@ -1,13 +1,20 @@
 # website/views.py
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView
-# from django.views.generic.detail import DetailView
+from django.core.cache.backends.base import DEFAULT_TIMEOUT
+from django.conf import settings
+from django.views.decorators.cache import cache_page
+from django.utils.decorators import method_decorator
 from django.views import generic
 from .models import Project, Photo
 # from django.db.models import Prefetch
 from braces.views import PrefetchRelatedMixin
 
+CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
+
+# @cache_page(CACHE_TTL)
+@method_decorator(cache_page(CACHE_TTL), name='dispatch')
 class HomePageView(TemplateView):
 
     def get(self, request, **kwargs):

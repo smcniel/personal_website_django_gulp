@@ -1,5 +1,5 @@
 from django.db import models
-from embed_video.fields import EmbedVideoField
+# from embed_video.fields import EmbedVideoField
 
 
 # organize between properties and methods
@@ -32,8 +32,15 @@ class Photo(models.Model):
     caption = models.TextField(blank=True)
 
 
-class Video(models.Model):
-    project = models.ForeignKey(Project, related_name="videos")
-    video = EmbedVideoField()  # similar to models.URLField()
+# class Photo(models.Model):
+#     project = models.ForeignKey(Project, related_name="photos")
+#     image = models.ImageField(upload_to=get_image_path)
+#     is_cover_photo = models.BooleanField()
+#     caption = models.TextField(blank=True)
+
+
+# class Video(models.Model):
+#     project = models.ForeignKey(Project, related_name="videos")
+#     video = EmbedVideoField()  # similar to models.URLField()
 
 
