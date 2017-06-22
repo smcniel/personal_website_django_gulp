@@ -33,6 +33,10 @@
 @mixin for-lg-desktop {
   @media (min-width: 1800px) { @content; }
 }
+
+// med tablet 768 break at 767
+// lg tablet 992 break at 991
+
 // @mixin break-med {
 //   @media (min-width: $width-ipad) {
 //       // .img-sm {display:none;}

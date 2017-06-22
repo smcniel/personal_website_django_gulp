@@ -15,11 +15,6 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
-    # get rid of
-    def get_cover_photo(self):
-        photo = Photo.objects.filter(project=self).get(is_cover_photo=True)
-        return photo.image
-
 
 def get_image_path(instance, filename):
     return '/'.join(['project_images', instance.project.slug, filename])
@@ -30,6 +25,7 @@ class Photo(models.Model):
     image = models.ImageField(upload_to=get_image_path)
     is_cover_photo = models.BooleanField()
     caption = models.TextField(blank=True)
+    order = models.PositiveSmallIntegerField(default=0)
 
 
 # class Photo(models.Model):

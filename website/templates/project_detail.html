@@ -20,7 +20,7 @@
     <div class="grid-cell">
     {% for photo in project.photos.all %}
       {% if not photo.is_cover_photo %}
-      {% thumbnail photo.image "400" as im %}
+      {% thumbnail photo.image "1920" as im %}
       <img src="{{ im.url }}" class="responsive-img" alt="">
       {% endthumbnail %}
       {% endif %}

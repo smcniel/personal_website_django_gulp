@@ -7,7 +7,7 @@ from django.views.decorators.cache import cache_page
 from django.utils.decorators import method_decorator
 from django.views import generic
 from .models import Project, Photo
-# from django.db.models import Prefetch
+from django.db.models import Prefetch
 from braces.views import PrefetchRelatedMixin
 
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
@@ -19,19 +19,15 @@ class HomePageView(TemplateView):
 
     def get(self, request, **kwargs):
 
-        projects = Project.objects.all(
-        ).prefetch_related(
-            'photos__project',
-        ).all()
+        # projects = Project.objects.all(
+        # ).prefetch_related(
+        #     'photos__project',
+        # ).all()
 
-        # ).all().filter(photos__is_cover_photo=True)
-        # Prefetch(
-    #             'photos_set',
-    #             queryset=Photo.objects.filter(is_cover_photo=False),
-    #             to_attr="proj_imgs"
-    #         ),
+        cover_photos = Photo.objects.filter(is_cover_photo=True).select_related('project')
+
         return render(request, 'index.html', {
-            'projects': projects,
+            'cover_photos': cover_photos,
         })
 
 

@@ -10,7 +10,7 @@ class ProjectAdmin(admin.ModelAdmin):
 
 
 class PhotoAdmin(admin.ModelAdmin):
-    list_display = ('project', 'is_cover_photo', 'caption')
+    list_display = ('project', 'is_cover_photo', 'caption', 'order')
     list_display_links = ('project',)
 
 # Register your models here.

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'embed_video',
     'website',
     'sorl.thumbnail',
+    'website.templatetags',
 ]
 
 MIDDLEWARE = [

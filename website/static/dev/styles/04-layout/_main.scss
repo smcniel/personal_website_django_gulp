@@ -21,7 +21,10 @@
       max-width: 50em;
    }
    @include for-desktop {
-      max-width: 60em;
+      max-width: 70em;
+   }
+   @include for-lg-desktop {
+      max-width: 120em;
    }
 }
 

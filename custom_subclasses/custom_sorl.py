@@ -1,8 +1,10 @@
 # Custom subclassing of sorl-thumbnail
-import os, re
+import os
+import re
 from sorl.thumbnail.base import ThumbnailBackend
 from django.template.defaultfilters import slugify
 from django.conf import settings
+
 
 class SEOThumbnailBackend(ThumbnailBackend):
     """
